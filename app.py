@@ -12,10 +12,14 @@ def query_db(sql):
     conn.close()
     return rows
 
+# @app.route("/")
+# def index():
+#     with open("/Users/cjj/Desktop/VisualMan copy/dashboard.html", "r") as f:
+#         return f.read()
+
 @app.route("/")
 def index():
-    with open("/Users/cjj/Desktop/VisualMan copy/dashboard.html", "r") as f:
-        return f.read()
+    return send_from_directory(".", "mydashboard.html")
 
 @app.route("/api/games")
 def get_games():
